@@ -36,4 +36,13 @@ class Store < ApplicationRecord
       ST_Distance(lonlat, 'POINT(%f %f)') < %d
     } % [longitude, latitude, distance_in_km * 1000])
   }
+  
+  def ratings_average
+    return 0 if self.ratings.empty?
+    
+    # soma todas as estrelas e
+    # divide pelo número de avaliações e
+    # converte pra inteiro
+    (self.ratings.sum(:value) / self.ratings.count).to_i
+  end
 end
