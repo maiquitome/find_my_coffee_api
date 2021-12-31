@@ -9,7 +9,7 @@ class GetGoogleCoffeeListService
   
   def call
     begin
-      initial_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=coffee+shops"
+      initial_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=cafe"
       
       location = "location=#{@latitude},#{@longitude}"
       
